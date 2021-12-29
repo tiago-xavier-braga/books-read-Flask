@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 
 {% block body%}
-<div class="text">
-
-    <h1>Tabelinha de Tiago</h1>
-        <table border="1">
-            <thead class="darker">
-                <tr>
+<div class="books">
+        <table>
+                <tr class='top'>
                     <td>Livro</td>
                     <td>Autor</td>
                     <td>Ano</td>
                 </tr>
-            </thead>
-            <tbody>
             {% for books in books %}
                 <tr>
                     <td>{{ books.name }}</td>
@@ -21,15 +16,4 @@
                 </tr>
             {% endfor %}
 </div>
-<div class="box">
-
-    <form action="/" method="POST" class="box">
-        <input type="text" name="name" placeholder="Nome do Livro">
-        <input type="text" name="auth" placeholder="Nome do Autor">
-        <input type="number" name="year" placeholder="Ano da leitura">
-        <input type="submit" value="enviar">
-    </form>
-</div>
-
-
 {% endblock%}

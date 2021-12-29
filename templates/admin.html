@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="box">
+    <form action="/admin/books/" method="POST" class="box">
+        <input type="text" name="name" placeholder="Nome do Livro">
+        <input type="text" name="auth" placeholder="Nome do Autor">
+        <input type="number" name="year" placeholder="Ano da leitura">
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+<div class="books">
+    <table>
+            <tr class='top'>
+                <td>Livro</td>
+                <td>Ação</td>
+            </tr>
+        {% for books in books %}
+            <tr>
+                <td>{{ books.name }}</td>
+                <td><a href="/delete/{{books.id}}">DELETE</a></td>
+            </tr>
+        {% endfor %}
+</div>
+{% endblock %}
